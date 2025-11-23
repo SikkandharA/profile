@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sikkandhar - Modern Portfolio</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); transition: 0.3s; }
+  :root {
+    --bg: #f5f7fa;
+    --text: #333;
+    --card: white;
+  }
+  .dark {
+    --bg: #0e1725;
+    --text: #e8e8e8;
+    --card: #1b2636;
+  }
+  header {
+    background: linear-gradient(135deg, #0a2a43, #1479c9);
+    color: white; padding: 60px 20px; text-align: center;
+    animation: fadeIn 1s ease;
+  }
+  header h1 { font-size: 42px; margin-bottom: 10px; }
+  .container { max-width: 1000px; margin: 30px auto; padding: 20px; }
+  .section {
+    background: var(--card); border-radius: 12px; padding: 25px;
+    margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    animation: fadeUp 0.8s ease;
+  }
+  .section h2 { font-size: 26px; margin-bottom: 15px; }
+  ul { line-height: 1.7; }
+  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
+  @keyframes fadeUp { from {opacity:0; transform: translateY(20px);} to {opacity:1;} }
+
+  .skills-grid {
+    display: grid; gap: 15px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+  .skill-box {
+    background: #1479c9; color: white;
+    padding: 18px; border-radius: 10px;
+    text-align: center; font-size: 18px;
+    transition: 0.3s; font-weight: bold;
+  }
+  .skill-box:hover { transform: scale(1.05); background: #0a2a43; }
+
+  .photo-box { text-align:center; margin-bottom:20px; }
+  .photo-box img {
+    width:180px; height:180px; border-radius:50%;
+    object-fit:cover; border:4px solid #1479c9;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+  }
+
+  .resume-btn {
+    display:inline-block; padding:12px 20px; background:#1479c9;
+    color:white; border-radius:8px; text-decoration:none;
+    margin-top:10px; transition:0.3s;
+  }
+  .resume-btn:hover { background:#0a2a43; }
+
+  .mode-btn {
+    position: fixed; top: 20px; right: 20px;
+    padding: 10px 18px; background: #1479c9; color: white;
+    border-radius: 8px; cursor: pointer; font-weight: bold;
+  }
+
+  footer {
+    text-align:center; padding:30px; margin-top:40px;
+    background:#0a2a43; color:white;
+  }
+</style>
+</head>
+<body>
+
+<div class="mode-btn" onclick="toggleMode()">Toggle Dark/Light</div>
+
+<header>
+  <h1>Sikkandhar</h1>
+  <p>Automobile Mechanic • Electrical Technician • Plumbing Specialist</p>
+</header>
+
+<div class="container">
+
+  <div class="photo-box">
+    <img src="profile.jpg" alt="Profile Photo (Replace this image)">
+  </div>
+
+  <div class="section">
+    <h2>About Me</h2>
+    <p>I am <strong>Sikkandhar</strong>, a trained professional in automobile mechanics, electrical wiring, and plumbing. I enjoy practical repair work and helping households solve everyday mechanical and electrical issues.</p>
+    <a class="resume-btn" href="resume.pdf" download>⬇ Download Resume (PDF)</a>
+  </div>
+
+  <div class="section">
+    <h2>Contact Information</h2>
+    <p><strong>📞 Mobile:</strong> +91 7092297985</p>
+    <p><strong>📧 Email:</strong> siddiqraffiq276@gmail.com</p>
+    <p><strong>📍 Location:</strong> Madurai, Tamil Nadu, India</p>
+    <p><strong>🗣 Languages:</strong> Tamil</p>
+  </div>
+
+  <div class="section">
+    <h2>Education</h2>
+    <ul>
+      <li>10th Standard – Madura College Higher Secondary School (2005)</li>
+      <li>Diploma in Four Wheeler Mechanism – Tamil Nadu Open University (2006)</li>
+      <li>Automobile Training – Solamalai Automobiles Pvt Ltd, Madurai (2006)</li>
+    </ul>
+  </div>
+
+  <div class="section">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-box">🚗 Four-Wheeler Mechanic</div>
+      <div class="skill-box">🔌 Electrical Wiring</div>
+      <div class="skill-box">🚰 Plumbing Work</div>
+      <div class="skill-box">🛠 Home Maintenance</div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  © 2025 Sikkandhar • Modern Portfolio
+</footer>
+
+<script>
+function toggleMode() {
+  document.body.classList.toggle('dark');
+}
+</script>
+
+</body>
+</html>
