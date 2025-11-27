@@ -1,135 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sikkandhar - Modern Portfolio</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sikkandhar Alavudin</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
 <style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { font-family: 'Segoe UI', sans-serif; background: var(--bg); color: var(--text); transition: 0.3s; }
-  :root {
-    --bg: #f5f7fa;
-    --text: #333;
-    --card: white;
-  }
-  .dark {
-    --bg: #0e1725;
-    --text: #e8e8e8;
-    --card: #1b2636;
-  }
-  header {
-    background: linear-gradient(135deg, #0a2a43, #1479c9);
-    color: white; padding: 60px 20px; text-align: center;
-    animation: fadeIn 1s ease;
-  }
-  header h1 { font-size: 42px; margin-bottom: 10px; }
-  .container { max-width: 1000px; margin: 30px auto; padding: 20px; }
-  .section {
-    background: var(--card); border-radius: 12px; padding: 25px;
-    margin-bottom: 25px; box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    animation: fadeUp 0.8s ease;
-  }
-  .section h2 { font-size: 26px; margin-bottom: 15px; }
-  ul { line-height: 1.7; }
-  @keyframes fadeIn { from {opacity:0;} to {opacity:1;} }
-  @keyframes fadeUp { from {opacity:0; transform: translateY(20px);} to {opacity:1;} }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',sans-serif;background:#f4f6f8;color:#222;transition:0.3s;}
+  :root{--bg:#f4f6f8;--text:#222;--card:#fff;} .dark{--bg:#0f1724;--text:#e8e8e8;--card:#1e293b;}
+  body{background:var(--bg);color:var(--text);} 
 
-  .skills-grid {
-    display: grid; gap: 15px;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  }
-  .skill-box {
-    background: #1479c9; color: white;
-    padding: 18px; border-radius: 10px;
-    text-align: center; font-size: 18px;
-    transition: 0.3s; font-weight: bold;
-  }
-  .skill-box:hover { transform: scale(1.05); background: #0a2a43; }
+  header{background:linear-gradient(135deg,#0a2a43,#1479c9);padding:70px 20px;text-align:center;color:white;animation:fadeIn 1s ease;} 
+  header h1{font-size:42px;margin-bottom:10px;} 
 
-  .photo-box { text-align:center; margin-bottom:20px; }
-  .photo-box img {
-    width:180px; height:180px; border-radius:50%;
-    object-fit:cover; border:4px solid #1479c9;
-    box-shadow:0 4px 10px rgba(0,0,0,0.2);
-  }
+  .toggle-btn{position:fixed;top:20px;right:20px;background:#1479c9;color:white;padding:10px 18px;border-radius:8px;cursor:pointer;font-weight:bold;} 
 
-  .resume-btn {
-    display:inline-block; padding:12px 20px; background:#1479c9;
-    color:white; border-radius:8px; text-decoration:none;
-    margin-top:10px; transition:0.3s;
-  }
-  .resume-btn:hover { background:#0a2a43; }
+  .container{max-width:1100px;margin:30px auto;padding:20px;} 
+  .section{background:var(--card);padding:25px;border-radius:12px;margin-bottom:25px;box-shadow:0 4px 12px rgba(0,0,0,0.08);animation:fadeUp 0.8s ease;} 
+  .section h2{font-size:26px;margin-bottom:12px;} 
+  ul{line-height:1.7;} 
 
-  .mode-btn {
-    position: fixed; top: 20px; right: 20px;
-    padding: 10px 18px; background: #1479c9; color: white;
-    border-radius: 8px; cursor: pointer; font-weight: bold;
-  }
+  .profile-photo{text-align:center;margin-bottom:20px;} 
+  .profile-photo img{width:180px;height:180px;border-radius:50%;object-fit:cover;border:4px solid #1479c9;} 
 
-  footer {
-    text-align:center; padding:30px; margin-top:40px;
-    background:#0a2a43; color:white;
-  }
+  .resume-btn{display:inline-block;background:#1479c9;color:white;padding:12px 20px;border-radius:8px;text-decoration:none;margin-top:12px;} 
+  .resume-btn:hover{background:#0a2a43;} 
+
+  .carousel img{width:100%;border-radius:10px;box-shadow:0 4px 10px rgba(0,0,0,0.1);} 
+
+  footer{background:#0a2a43;color:white;text-align:center;padding:30px;margin-top:40px;} 
+
+  @keyframes fadeIn{from{opacity:0;}to{opacity:1;}} 
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;}} 
 </style>
 </head>
 <body>
 
-<div class="mode-btn" onclick="toggleMode()">Toggle Dark/Light</div>
+<div class="toggle-btn" onclick="toggleMode()">Dark / Light</div>
 
 <header>
   <h1>Sikkandhar</h1>
-  <p>Automobile Mechanic • Electrical Technician • Plumbing Specialist</p>
+  <p>General Worker • Mechanic • Electrical & Plumbing Assistant</p>
 </header>
 
 <div class="container">
 
-  <div class="photo-box">
-    <img src="profile.jpg" alt="Profile Photo (Replace this image)">
+  <div class="profile-photo">
+    <img src="profile.jpg" alt="Profile Photo" />
   </div>
 
   <div class="section">
     <h2>About Me</h2>
-    <p>I am <strong>Sikkandhar</strong>, a trained professional in automobile mechanics, electrical wiring, and plumbing. I enjoy practical repair work and helping households solve everyday mechanical and electrical issues.</p>
-    <a class="resume-btn" href="resume.pdf" download>⬇ Download Resume (PDF)</a>
+    <p>I am <strong>Sikkandhar Alavudin</strong>, an experienced general worker skilled in tailoring shop operations, auto driving, flour mill machinery, and mechanical assistance. I have strong hands-on experience in maintenance, electrical work, lubrication, machine operation, and customer service.</p>
+
+    <a href="resume.pdf" download class="resume-btn">⬇ Download Resume</a>
   </div>
 
   <div class="section">
-    <h2>Contact Information</h2>
-    <p><strong>📞 Mobile:</strong> +91 7092297985</p>
-    <p><strong>📧 Email:</strong> siddiqraffiq276@gmail.com</p>
-    <p><strong>📍 Location:</strong> Madurai, Tamil Nadu, India</p>
-    <p><strong>🗣 Languages:</strong> Tamil</p>
+    <h2>Certificates</h2>
+    <p>Swipe to view certificates:</p>
+
+    <div class="carousel">
+      <div><img src="cert1.jpg" alt="Certificate 1"></div>
+      <div><img src="cert2.jpg" alt="Certificate 2"></div>
+      <div><img src="cert3.jpg" alt="Certificate 3"></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>Experience</h2>
+    <ul>
+      <li><strong>2025 – Present:</strong> TAJ & NAJEEM Uniform Tailor Shop – General Worker (Buttons, Overlock, Electrical, Cleaning, Accounts, Material arrangement)</li>
+      <li><strong>2022 – 2024:</strong> OLA / Uber / Rapido – Auto Driver (Passenger safety, customer service)</li>
+      <li><strong>2010 – 2022:</strong> Lal Flour Mill – Mechanic & Machine Operator (Rice/Wheat/Chilli grinding machines, lubrication, noise control, accounts)</li>
+      <li><strong>2008 – 2010:</strong> Bavani Automobiles – Mechanic Helper (Brake, wheels, oil change, filters, tools, spare delivery, cleaning)</li>
+      <li><strong>2007 – 2008:</strong> Solamalai Maruthi Automobiles – Mechanic Helper</li>
+      <li><strong>2006:</strong> Solamalai Maruthi Automobiles – Field Training</li>
+    </ul>
   </div>
 
   <div class="section">
     <h2>Education</h2>
     <ul>
-      <li>10th Standard – Madura College Higher Secondary School (2005)</li>
-      <li>Diploma in Four Wheeler Mechanism – Tamil Nadu Open University (2006)</li>
-      <li>Automobile Training – Solamalai Automobiles Pvt Ltd, Madurai (2006)</li>
+      <li>Diploma in Four Wheeler Mechanism – Tamil Nadu Open University (2005–2006)</li>
+      <li>Life Adjustment Skills & Automobile Maintenance – Madurai Community College</li>
     </ul>
   </div>
 
   <div class="section">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-box">🚗 Four-Wheeler Mechanic</div>
-      <div class="skill-box">🔌 Electrical Wiring</div>
-      <div class="skill-box">🚰 Plumbing Work</div>
-      <div class="skill-box">🛠 Home Maintenance</div>
-    </div>
+    <h2>Contact Information</h2>
+    <p><strong>WhatsApp:</strong> +91 7092297985</p>
+    <p><strong>Kuwait Mobile:</strong> +965 51026101</p>
+    <p><strong>Address (India):</strong> Madurai, Tamil Nadu</p>
+    <p><strong>Address (Kuwait):</strong> Mangaf Block 4</p>
   </div>
 
 </div>
 
 <footer>
-  © 2025 Sikkandhar • Modern Portfolio
+  © 2025 Sikkandhar • Modern Professional Portfolio
 </footer>
 
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
 <script>
-function toggleMode() {
-  document.body.classList.toggle('dark');
-}
+  function toggleMode(){ document.body.classList.toggle('dark'); }
+  $(document).ready(function(){ $('.carousel').slick({ dots:true, infinite:true, speed:500, slidesToShow:1, adaptiveHeight:true }); });
 </script>
 
 </body>
